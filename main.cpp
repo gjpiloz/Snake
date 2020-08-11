@@ -69,15 +69,15 @@ int main() {
 		}
 		prevDir = dir;
 
-		if (Keyboard::isKeyPressed(Keyboard::Left), prevDir != 2) dir = 1;
-		if (Keyboard::isKeyPressed(Keyboard::Right), prevDir != 1) dir = 2;
-		if (Keyboard::isKeyPressed(Keyboard::Up), prevDir != 0) dir = 3;
-		if (Keyboard::isKeyPressed(Keyboard::Down), prevDir != 3) dir = 0;
+		if (Keyboard::isKeyPressed(Keyboard::Left)) dir = 1;
+		if (Keyboard::isKeyPressed(Keyboard::Right)) dir = 2;
+		if (Keyboard::isKeyPressed(Keyboard::Up)) dir = 3;
+		if (Keyboard::isKeyPressed(Keyboard::Down)) dir = 0;
 
-		if (Keyboard::isKeyPressed(Keyboard::A), prevDir != 2) dir = 1;
-		if (Keyboard::isKeyPressed(Keyboard::D), prevDir != 1) dir = 2;
-		if (Keyboard::isKeyPressed(Keyboard::W), prevDir != 0) dir = 3;
-		if (Keyboard::isKeyPressed(Keyboard::S), prevDir != 3) dir = 0;
+		if (Keyboard::isKeyPressed(Keyboard::A)) dir = 1;
+		if (Keyboard::isKeyPressed(Keyboard::D)) dir = 2;
+		if (Keyboard::isKeyPressed(Keyboard::W)) dir = 3;
+		if (Keyboard::isKeyPressed(Keyboard::S)) dir = 0;
 
 		if (timer > delay) {timer=0; Tick();}
 
