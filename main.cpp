@@ -14,19 +14,27 @@ struct Fruct
 {int x, y;} f;
 
 void Tick() {
+	
+	/*
+	This FOR loop is what is moving the snake. 
+	Counts it backwards making the current segment xy to be the xy value of the segment before it.
+	*/
 	for (int i = num; i > 0; i--) {
 		s[i].x = s[i - 1].x;
 		s[i].y = s[i - 1].y;
 	}
+	
 	if (dir == 0) s[0].y += 1;
 	if (dir == 1) s[0].x -= 1;
 	if (dir == 2) s[0].x += 1;
 	if (dir == 3) s[0].y -= 1;
 
-	if ((s[0].x == f.x) && (s[0].y == f.y))
-        {num++;
-         f.x = rand() % N;
-         f.y = rand() % M;}
+	//If the snake head is touching the fruit
+	if ((s[0].x == f.x) && (s[0].y == f.y)){
+	    num++; // add one to the snake length
+            f.x = rand() % N; // Move the fruit X position
+            f.y = rand() % M; // Move the fruit Y position
+	}
 
     if (s[0].x>N) s[0].x=0; if (s[0].x<0) s[0].x=N;
     if (s[0].y>M) s[0].y=0; if (s[0].y<0) s[0].y=M;
