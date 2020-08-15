@@ -77,7 +77,7 @@ int main() {
 		}
 		prevDir = dir;
 
-		if (Keyboard::isKeyPressed(Keyboard::Left)) dir = 1;
+		if (Keyboard::isKeyPressed(Keyboard::Left) && prevDir != 2) dir = 1;
 		if (Keyboard::isKeyPressed(Keyboard::Right)) dir = 2;
 		if (Keyboard::isKeyPressed(Keyboard::Up)) dir = 3;
 		if (Keyboard::isKeyPressed(Keyboard::Down)) dir = 0;
